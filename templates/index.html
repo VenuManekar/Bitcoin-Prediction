@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Price Prediction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: "Inter", sans-serif;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .datetime {
+        margin-top: 15px;
+        padding: 5px;
+        border: 1px solid rgb(3, 114, 142);
+        outline: rgb(3, 114, 142);
+        border-radius: 5px;
+      }
+
+      .button {
+        margin-top: 15px;
+        background-color: rgb(3, 114, 142);
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 5px;
+      }
+      .main_container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 30px;
+        border-radius: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main_container">
+      <h1>How to use</h1>
+      <p>First and sencond date parameters is for trainig data, data which will be used in trainig of our model.</p>
+      <p>Third and fourth date parameters are for testing data, data which will be used for testing of our model.</p>
+      <p>Output will be our predicted value for the next hour from the fourth date.</p>
+      <p>For best results use forth date as current date and time</p>
+    </div>
+    <div class="main_container">
+      <h1>Collect Data</h1>
+      <form id="form" class="container" method="POST" action="/sub">
+        <input type="datetime-local" id="datetime1" class="datetime" name="a" />
+        <input type="datetime-local" id="datetime2" class="datetime" name="b" />
+        <input type="datetime-local" id="datetime3" class="datetime" name="c" />
+        <input type="datetime-local" id="datetime4" class="datetime" name="d" />
+        <button class="button" type="submit" value= "predict">Submit Data</button>
+      </form>
+    </div>
+    
+
+  </body>
+</html>
